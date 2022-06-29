@@ -57,9 +57,21 @@
   }
   
   .content {
-    padding: 40px;
+    padding-top: 70px;
+    padding-left: 40px;
+    padding-right: 40px;
   }
   
+  .all {
+    text-decoration: none;
+    font: 16px arial, sans-serif;
+    color: #282a36;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
   #icon {
     font-size: 20px;
   }

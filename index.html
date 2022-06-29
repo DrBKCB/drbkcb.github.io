@@ -23,10 +23,12 @@
         >
         <span class="container2">
           <input
+            onkeyup="myFunction()"
             name="test"
             class="searchbar"
             type="text"
             placeholder="Tìm kiếm"
+            id="myInput"
           />
         </span>
         <span class="fork">
@@ -52,8 +54,16 @@
       </div>
     </header>
 
-    <div class="content"></div>
-
+    <div class="content">
+      <ul id="duongdan">
+        <li>
+          <a href="parabol.md" class="all"
+            >Công thức tính diện tích hình phẳng giới hạn bởi đường parabol và
+            đường thẳng vuông góc với trục đối xứng của đường parabol</a
+          >
+        </li>
+      </ul>
+    </div>
     <footer>
       <div class="footer">
         <a class="icon1" href="https://github.com/DrBKCB" target="_blank"
@@ -61,5 +71,24 @@
         >
       </div>
     </footer>
+
+    <script>
+      function myFunction() {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("duongdan");
+        li = ul.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName("a")[0];
+          txtValue = a.textContent || a.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+          } else {
+            li[i].style.display = "none";
+          }
+        }
+      }
+    </script>
   </body>
 </html>
